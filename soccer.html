@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="filter.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <h>Soccer Page</h>
+    <style>
+      html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+
+      .w3-sidebar {
+        z-index: 3;
+        width: 250px;
+        top: 43px;
+        bottom: 0;
+        height: inherit;
+      }
+
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 200px;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+      }
+
+      .price {
+        color: grey;
+        font-size: 22px;
+      }
+
+      .card button {
+        border: none;
+        outline: 0;
+        padding: 12px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+      }
+
+      .card button:hover {
+        opacity: 0.7;
+      }
+
+
+    </style>
+</head>
+<body>
+
+    <!--Navigation bar-->
+<div id="nav-placeholder">
+
+</div>
+
+<script>
+$(function(){
+  $("#nav-placeholder").load("nav.html");
+});
+</script>
+<!--end of Navigation bar-->
+
+<!--sidebar-->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item">
+    <b>Filters</b>
+  </h4>
+  <div class="container" style="height:258px">
+  <div class="w3-bar-item" style="width:100%">
+    <h>Product Type</h>
+    <div id="btns"></div>
+    </div>
+  </div>
+
+
+  <div class="container brands-container" style="height:258px">
+    <div class="w3-bar-item" style="width:100%">
+      <h>Brands</h>
+      <div id="btns2"></div>
+      </div>
+    </div>
+
+  <div class="container" style="height:258px">
+    <div class="w3-bar-item" style="width:100%">
+      <h>Price</h>
+      <div class="price-input">
+        <div class="field">
+          <span>Minimum Price</span>
+          <input type="number" class="min-input" value="10">
+        </div>
+        <div class="field">
+          <span>Maximum Price</span>
+          <input type="number" class="min-input" value="300">
+        </div>
+      </div>
+      <div class="slider" style="margin-top: 32px">
+        <div class="progress"></div>
+      </div>
+      <div class="range-input">
+        <input type="range" class="range-min" min="0" max="300" value="65" step="10">
+        <input type="range" class="range-max" min="0" max="300" value="230" step="10">
+      </div>
+      <button id="prices" onclick="priceCheck()" style="margin-top: 32px;">
+        Filter Price
+      </button>
+      </div>
+    </div>
+  <button style="top:114px"><a href="soccer.html" style="text-decoration: none;">Clear Filters</a></button>
+</nav>
+<!--end of sidebar-->
+
+<!-- main shop content-->
+<div class="w3-main" style="margin-left:250px">
+  <div class="container w3-row w3-padding-64">
+    <div id="root"></div>
+  </div>
+</div>
+
+<script type="text/javascript" src="filter.js"></script>
+
+</body>
+</html>
